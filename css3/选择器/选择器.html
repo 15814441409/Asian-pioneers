@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+       	<style>
+			/* p[class]{
+				background: red;
+			} */
+			/* p[class='shizi']{
+				background: yellow;
+			} */
+			/* p[class~='laohu']{
+				background: yellow;
+			}
+			p[class^='lie']{
+				background: gray;
+			}
+			p[class*='shen']{
+				background: red;
+			} */
+			/* p:nth-child(2n+1){
+				background: red;
+			} */
+			/* p:nth-last-child(4){
+				background:black;
+			}
+			p:first-child{
+				background: red;
+			} */
+			p:nth-child(2n){
+				background: gray;
+			}
+			p[class|=z]{
+				background: black;
+			}
+			p:target{
+				color: white;
+			}
+       	</style>
+    </head>
+    <body>
+    	<nav>
+    		<p class='laohu ,shensan'>     <a href="#">老虎</a>  </p>
+    		<p class='shizi ,caoyuan'>     <a href="#">狮子</a>  </p>
+    		<p class='liebao ,caoyuan'>    <a href="#">猎豹</a>  </p>
+    		<*******猛兽]>
+    		<p class='qunlang ,shensan,caoyuan'>   <a href="#">群狼</a>  </p>
+    		<p class='gouxiong,shensan'>  <a href="#">狗熊</a>  </p>
+    		<p class='laoying,shensan'>   <a href="#">老鹰</a>  </p>
+    		<p class='z-iegou,caoyuan'>       <a href="#">鬣狗</a>  </p>
+    	</nav>
+    </body>
+</html>

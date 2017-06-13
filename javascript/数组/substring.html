@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			#box{
+				width: 300px;
+				/* height: 300px; */
+				background: gray;
+				border:2px solid red;
+				overflow: hidden;
+			}
+        </style>
+       	<script>
+       		window.onload=function(){
+       			var box=document.getElementById('box');
+       			var oP=box.getElementsByTagName('p')[0];
+       			var oA=box.getElementsByTagName('a')[0];
+       			// alert(oP);
+       			var isShow=true;
+       			var timp=oP.innerHTML;
+       			// alert(timp);
+       			// yun xin
+       			oA.onclick=function(){
+       				isShow=!isShow;
+       				if(!isShow){
+       					oP.innerHTML=timp;
+       					oA.innerHTML='收起';
+       				}else{
+       					oP.innerHTML=timp.substring(0,40)+'.....';
+       					oA.innerHTML='展开';
+       				}
+       				// alert('000');
+       			}
+       		}
+       	</script>
+    </head>
+    <body>
+    	<div id="box">
+    		<p>一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》一个人只有用心去看，才能看到真实。事情的真相只用眼睛是看不见的。——《小王子》
+    		</p>
+    		<a href="#">展开</a>
+    	</div>
+    </body>
+</html>

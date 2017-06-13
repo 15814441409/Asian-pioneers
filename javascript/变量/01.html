@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    	//变量值互换 1---
+    		// var a=10;
+    		// var b=20;
+    		// var temp=0;
+    		// temp=a;
+    		// a=b;
+    		// b=temp;
+    		// alert(a);
+    		// alert(b);
+    	//变量值互换 2---
+    	 // 	var a=10;
+    	 // 	var b=20;
+    	 // 	num=a+b;
+    	 // 	a=num-a;
+    	 // 	b=num-a;
+    	 // 	console.log(a);
+    	 // 	console.log(b);
+    	 // // 求200-300之间所有奇数的和,
+    	 
+    	 // var temp=0;
+    	 // for (var i = 200 ; i <= 300 ; i++) {
+    	 // 	if ( i/2 === 0 ) {
+    	 // 		continue;
+    	 // 	}
+    	 // 	temp += i;
+    	 // }
+    	 // console.log(temp);
+    	 // var temp = 0;
+    	 // for ( var i = 200 ; i <= 300 ; i++ ) {
+    	 // 	if ( i/2 === 0 ) {
+    	 // 		continue;
+    	 // 	}
+    	 // 	temp += i;
+    	 // }
+    	 // alert(temp);
+    	 // 求200-300之间能被7整除的第一个数
+    	 
+    	 // for ( var i = 200 ; i <= 300 ; i++ ) {
+    	 // 	if ( i % 7=== 0 ) {
+    	 // 		console.log(i);
+    	 // 		break;
+    	 // 	}
+    	 	
+    	 // }
+    	 // for ( var i  = 200; i <= 300 ; i++ ) {
+    	 // 	if ( i % 7 === 0) {
+    	 // 		console.log(i);
+    	 // 		break;
+    	 // 	}
+    	 // }
+    	 
+
+    	 //for in 获取属性名与方法
+    	 // var obj = {};
+    	 // alert(typeof obj)
+    	 // for( var i = 0 ; i < 10 ; i++ ) {
+    	 // 	obj[i] = i * 2;
+    	 // }
+    	 // for( key in obj ){	
+    	 // 	console.log(obj+'的属性值为'+obj[key]);
+    	 // }
+    	// var obj = {};
+    	// for(var i = 0 ; i < 10 ; i++) {
+    	// 	obj[i] = i+'时光易逝';
+    	// 	// console.log(obj[i]);
+    	// }
+    	// for( var key in obj) {
+    	// 	obj[i]+'且行且珍惜'+obj[key];
+    	// }	
+    	
+
+    	// 递归 --> 函数调用
+    	// function fn(n) {
+    	// 	if( n===1 ){
+    	// 		return 1;
+    	// 	}
+    	// 	return n + fn(n-1);
+    	// }
+    	// fn(10);  //调用函数
+    	// console.log(fn(10));
+
+
+    	//解析    ::
+    	       //	n = 10;
+    	       //	10 + fn(10 - 1);
+    	       //	10 + 9 + fn(9-1);
+    	       //	10 + 9 + 8 +fn(8-1);
+    	       //	......
+    	       //	10 + 9 + 8 +...+ 1;
+    	 // function fn(n){
+
+    	 // 	if(n<10){
+    	 // 		return n;
+    	 // 	}
+    	 // 	return n%10 + fn(parseInt(n/10));
+    	 // }
+    	 // console.log(fn(123));
+    	 
+
+    	 //函数的返回值
+    	 // function fn(a,b){
+    	 // 	return a+b;
+    	 // }
+    	 // var num = fn(3,8);
+    	 // alert(num);
+        //
+        // 
+
+     	</script>
+        <script>
+            //    函数的递增
+            
+            // function fn(i) {
+            //     if(i===1){
+            //         return 1;
+            //     }
+            //     return i+fn(i-2);
+            // }
+            // console.log(fn(5));
+            function fn(n) {
+                if(n===1){
+                    return 5;
+                }
+                return n - fn(n-1);
+            }
+            console.log(fn(1));
+        </script>
+    </body>
+</html>

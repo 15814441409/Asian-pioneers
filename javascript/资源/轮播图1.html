@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="zb.js"></script>
+        <script>
+        	$(function(){
+        		var index=1;
+                // var temp=0;
+        		setInterval(function(){
+        			index++;
+                    if(index>20){
+                        index=1;
+                    }
+                    $('image').src='img/0'+index+'.jpg';
+        		},500);
+        	});
+        </script>
+    </head>
+    <body>
+    	<img src="img/01.jpg" height="300" width="500" alt="" id="image">
+    </body>
+</html>

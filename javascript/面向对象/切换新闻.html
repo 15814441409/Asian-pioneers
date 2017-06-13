@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type='text/css'>
+			input{
+				width: 67px;
+				height: 46px;
+				border:0;
+			}
+			.active{
+				background: red;
+				color: white;
+			}
+			div{
+				width: 200px;
+				height: 150px;
+				border:2px solid black;
+				display: none;
+			}
+        </style>
+        <script>
+        	window.onload = function() {
+        		var oBt = document.querySelectorAll('input');
+        		var oView = document.querySelectorAll('div');
+        		// for(var i = 0; i <oBt.length; i++ ) {
+        		// 	oBt[i].index = i;
+        		// 	oBt[i].onclick = function () {
+        		// 		// 清空样式
+        		// 		for(var j = 0; j < oBt.length; j++) {
+        		// 			oBt[j].className='';
+        		// 			oView[j].style.display='none';
+        		// 		}
+        		// 		oBt[this.index].className = 'active' ;
+        		// 		oView[this.index].style.display = 'block';
+        		// 	}
+        		// }
+        		for(var i = 0; i < oBt.length; i++) {
+        			oBt[i].index = i;
+        			oBt[i].onclick = function( ) {
+        				// 清空样式
+        				for(var j = 0; j < oBt.length; j++) {
+        					oBt[j].className = '';
+        					oView[j].style.display = 'none';
+        				}
+        				// 添加样式 
+        				oBt[this.index].className = 'active' ;
+        				oView[this.index].style.display = 'block' ;
+        			}
+        		}
+        	}
+        </script>
+    </head>
+    <body>
+    	<input type="button" value="新闻" class="active">
+    	<input type="button" value="娱乐">
+    	<input type="button" value="体育">
+    	<br/>
+    	<br/>
+    	<div style="display:block">新闻</div>
+    	<div>娱乐</div>
+    	<div>体育</div>
+    </body>
+</html>

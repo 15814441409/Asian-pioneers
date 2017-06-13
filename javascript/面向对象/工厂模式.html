@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			/* script{display:block;} */
+        </style>
+    </head>
+    <body>
+   	 	<script>
+   	 	// // $$$  构造一个函数
+   	 	// 		function Person (name , sex) {
+   	 	// // $$$   <1> 原料
+   	 	// 		var obj = new Object();
+   	 	// // $$$   <2>  加工
+   	 	// 		obj.name = name ;
+   	 	// 		obj.sex = sex;
+   	 	// 		obj.speak = function () {
+   	 	// 			console.log('name:' + this.name +',性别:' + this.sex);
+   	 	// 		}
+   	 	// // $$$   <3>  出厂销售
+   	 	// 		return obj;
+   	 	// 	}
+   	 	// // 通过构建函数创建对象
+   	 	// 	var wangFeng = new Person('王锋','男');
+      //   // alert(Person('王风','男'));
+   	 	
+        // *********************
+        function Person(name, sex){ // 构造函数(类)
+        // 1、原料
+        var obj = new Object();
+        
+        // 2、加工
+        obj.name = name;
+        obj.sex = sex;
+        
+        // 3、出货
+        return obj;
+      }
+      
+      
+      // 张三
+      var zhangsan = Person('张三', '男');
+      // alert(toString(zhangsan) )
+      // 李四
+      var lisi = Person('李四', '女');
+      
+      // 王五
+      var wangwu = Person('王五', '男');
+      </script>
+    </body>
+</html>

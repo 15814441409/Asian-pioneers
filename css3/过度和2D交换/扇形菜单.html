@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			#box{
+				width: 180px;
+				height: 120px;
+				background: red;
+				position: fixed;
+				right: 20px;
+				bottom: 20px;
+			}
+			#bade{
+				width: 180px;
+				height: 120px;
+				/* background: url(../../img/014.jpg); */
+				position: absolute;
+				transition: 3s;
+			}
+			#photo{
+				width: 180px;
+				height: 120px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#photo img{
+				width: 180px;
+				height: 120px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: 3s;
+			}
+			
+        </style>
+
+
+
+        <script>
+	        window.onload=function() {
+
+	        	var obox = document.querySelector('#box');
+	        	var oImage = document.querySelector('#photo').querySelectorAll('img');
+	        	var isShow = false;
+	        	var iR = 500;
+
+	        	// 点击操作
+	        	obox.onclick = function() {
+	        		isShow = !isShow;
+	        		if ( isShow ) {
+	        			this.style.transfrom = 'rotate(-360deg)';
+	        			for (var i = 0; i < oImage.length; i++) {
+	        				var iDeg = (90/4) * i;
+	        				var left = -compute(iR, iDeg);
+							var top = -compute(iR, (90-iDeg));
+							oImage[i].style.left = left + 'px' ;
+							oImage[i].style.top = top + 'px' ;
+							oImage[i].style.transform = 'rotate(360deg)';
+	        			}	
+	        		}else {
+						this.style.transform = 'rotate(0)';
+						
+						for(var i=0; i<oImage.length; i++){
+							oImage[i].style.left = 0 + 'px';
+							oImage[i].style.top = 0 + 'px';
+							
+							oImage[i].style.transform = 'rotate(0)';
+						}
+					}
+	        	}
+	        	// 根据sin值和斜边，求对边
+	        	function compute(iR,iDeg){
+					return Math.sin(iDeg*Math.PI/180) * iR;
+				}
+	        }
+        </script>
+
+
+
+    </head>
+    <body>
+    	<div id="box">
+    		<div id="photo">
+    			<img src="../../img/01.jpg" >
+    			<img src="../../img/02.jpg" >
+    			<img src="../../img/03.jpg" >
+    			<img src="../../img/04.jpg" >
+    			<img src="../../img/05.jpg" >
+    		</div>
+    		<div id="bade">
+    			<img src="../../img/014.jpg" height="120px" width="180" alt="">
+    		</div>
+    	</div>
+    </body>
+</html>

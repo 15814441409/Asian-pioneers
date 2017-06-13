@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{background: black}
+			#box{
+				width: 300px;
+				height: 300px;
+				background: gray;
+				border: 1px solid black;
+				margin: 100px auto;
+				perspective: 500px;
+				
+				/* 景深基点*/
+				perspective-origin: right top;
+			}
+			.view{
+				width: 80px;
+				height: 80px;
+				border:1px solid black;
+				margin: 110px auto;
+				position: relative;
+				transfrom-style:preserve-3d;
+			}
+			.view i{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				font-size: 37px;
+				color: white;
+				text-align: center;
+				line-height: 80px;
+			}
+			/* 前 */
+			.view i:nth-of-type(1){
+				background:pink;
+				/* z-index: 10; */ 	`				}
+			
+			/* 上 */
+			.view i:nth-of-type(2){
+				background: blue;
+				transform-origin:top;
+				transform: rotateX(-90deg);
+			}
+			/* 后 */
+			.view i:nth-of-type(3){
+				background: yellow;
+				transform:translateZ(-80px);
+				z-index: -10;			
+			}
+				/* 下 */
+			.view i:nth-of-type(4){
+				background: green;
+				transform-origin:bottom;
+				transform: rotateX(90deg);
+				z-index: -20;
+			}
+			/* 左 */
+			.view i:nth-of-type(5){
+				background: paleturquoise;
+				transform-origin: left;
+				transform: rotateY(90deg);
+			}
+			/* 右 */
+			.view i:nth-of-type(6){
+				background: mediumpurple;
+				transform-origin: right;
+				transform: rotateY(-90deg);
+				z-index: -20;
+			}
+			#box:hover .view{
+				/* X Y Z*/
+				transform-origin: center center -100px;
+				transform: rotateX(-360deg) rotateY(-720deg);
+				/*transform: rotateY(-88deg);*/
+				transition: 5s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="view">
+				<i>1</i>
+				<i>2</i>
+				<i>3</i>
+				<i>4</i>
+				<i>5</i>
+				<i>6</i>
+			</div>
+		</div>
+	</body>
+</html>

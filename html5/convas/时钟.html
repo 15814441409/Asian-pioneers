@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	*{
+        		margin:0;
+        		padding:0;
+        	}
+
+        	body{
+        		background: gray;
+        	}
+			#box{
+				background: white;
+				/* margin-left:200px ; */
+
+			}
+
+        </style>
+
+        <script>
+            window.onload=function(){
+                var obox=document.getElementById('box');
+                var oBt=obox.getContext("2d");
+
+    // 创建  时钟 
+                setInterval(function(){
+                    date();
+                },1000);
+
+
+
+            function date(){
+    // **************创建   --->   获取当前时间
+                var time=new Date();
+                // alert(time);
+                var oH=(time.getHours() *30 -90+time.getMinutes() )*Math.PI/180;
+                // alert(time.getMinutes() );
+                var  oM=(time.getMinutes()*6-90) * Math.PI/180;
+                // alert(minutes)
+                var oS =(time.getSeconds() * 6 -90) * Math.PI/180;
+    
+
+
+
+    // 公共的 提取出来
+                var x=200;
+                var y=150;
+                var r=80;
+
+
+
+    // *************创建一个圆 A**************
+            for(var i=0;i<60;i++){
+                oBt.beginPath();
+                oBt.strokeStyle='blue';
+                oBt.moveTo(x, y);
+                oBt.arc(x, y, r, i*6*Math.PI/180,(i+1)*Math.PI/180, false);
+                // console.log(oBt.moveTo);
+                oBt.stroke();
+                oBt.closePath();
+            }
+    //  ***********在创建一个稍微小一点的圆,覆盖在A圆上边
+                oBt.beginPath();
+                oBt.arc(x, y, r-3,0,360*Math.PI/180, false);
+                oBt.fillStyle='white';
+                oBt.fill();
+                oBt.closePath();
+
+
+
+
+    //  **********时刻度 长一些************* 
+              for(var i=0;i<12;i++){
+                oBt.beginPath();
+                oBt.strokeStyle='blue';
+                oBt.moveTo(x, y);
+                oBt.arc(x, y, r, i*30*Math.PI/180,(i+1)*Math.PI/180, false);
+                // console.log(oBt.moveTo);
+                oBt.stroke();
+                oBt.closePath();
+            }
+    //  ***********在创建一个稍微小一点的圆,覆盖在A圆上边
+                oBt.beginPath();
+                oBt.arc(x, y, r-7,0,360*Math.PI/180, false);
+                oBt.fillStyle='white';
+                oBt.fill();
+                oBt.closePath();
+
+    // 创造时针
+                oBt.beginPath();
+                oBt.moveTo(x,y);
+                oBt.arc(x, y, 30, oH, oH, false);
+                oBt.lineWidth=4;
+                oBt.stroke();
+                oBt.closePath();
+
+    // 创造分针
+                oBt.beginPath();
+                oBt.moveTo(x,y);
+                oBt.arc(x, y, 45, oM, oM, false);
+                oBt.lineWidth=3;
+                oBt.stroke();
+                oBt.closePath();
+
+    
+    // 创造秒针
+                oBt.beginPath();
+                oBt.moveTo(x,y);
+                oBt.arc(x, y, 60, oS, oS, false);
+                oBt.lineWidth=2;
+                oBt.stroke();
+                oBt.closePath();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+        </script>
+    </head>
+    <body>
+
+    	<canvas id='box' width='500' height='300'></canvas>
+    </body>
+</html>

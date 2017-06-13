@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script>
+
+	    window.onload = function( ) {
+	    	var audios = document.querySelector('audio');
+	    	audios.currentTime = 1 ;
+	    	alert(audios.currentSrc);
+	    	audios.volume=0.1;
+	    	audios.addEventListener('ended', function() {
+	    		// audios.play();
+	    		audios.src='宋冬野 - 安和桥.mp3';
+
+	    	})
+    }
+    </script>
+    <audio src="陈慧琳 - 记事本.mp3" controls='controls' autoplay='autoplay' ></audio>
+    </body>
+</html>

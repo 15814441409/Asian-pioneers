@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			#box {width: 200px ; height: 200px ; border:1px solid black ; margin: 80px auto ; border-radius: 50%; position: relative;}
+			#box ul li {width: 2px ; height: 9px ; background: red ; position: absolute ; left:50% ; top: 0 ; list-style: none; transform-origin:0 100px; }
+			#boxi{transfrom-origin:0 bottom;}
+			
+			#box .hou{width: 4px;height: 30px;background: red;position:absolute;left: 98px;top: 70px;};
+			#box .min{width: 3px;height: 45px;background: green;position: absolute;left: 98.5px;top: 55px;}
+			#box .sec{width: 2px;height: 60px;background: blue;position: absolute;left: 99px;top: 40px;}
+        </style>
+
+        <script>
+        	window.onload=function(){
+        		var obox=document.querySelector('#box');
+        		var oUl=obox.querySelector('ul');
+        		var oStyle = document.querySelector('style');
+        		for(var i=0;i<60;i++) {
+        			var Li = document.createElement('li');
+        			if(i%5==0){
+        				Li.style.height='13px';
+        			}
+        			// oStyle.innerHTML+='#box ul li:nth-of-type('+(i+1)+'){transfrom:rotate('+ i*6 + 'deg);}';
+        			oStyle.innerHTML += '#box ul li:nth-child(' + (i+1) + '){transform: rotate(' + i*6 + 'deg);}';
+        			oUl.appendChild(Li);
+        		}
+        		setInterval(changView,1000)
+        		var oHou=document.querySelector('.hou');
+        		var oMin=document.querySelector('.min');
+        		var oSec=document.querySelector('.sec');
+
+        		function changView() {
+	        		var oTimes = new Date();
+	        		// alert(oTimes) ;
+	        		var iSec = oTimes.getSeconds() * 6;
+	        		// alert(oHur);
+	        		var iMin = oTimes.getMinutes() * 6;
+	        		var iHou = oTimes.getHours() * 30 + iMin/60;
+	        		// alert(iHou);
+        			oHou.style.transfrom = 'rotate(' + iHou + 'deg)';
+        			oMin.style.transfrom = 'rotate(' + iMin + 'deg)';
+        			oSec.style.transfrom = 'rotate(' + iSec + 'deg)';
+
+        		}
+        	}
+        </script>
+    </head>
+    <body>
+    	<div id="box"> 
+			<ul>
+				<!-- 60个li  为 指针刻度条 -->
+				<!-- <li></li> -->
+			</ul>
+			<i class='min'></i>
+			<i class='hou'></i>
+    		<i class='sec'></i>
+    	</div>
+    	
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+			body{
+				background: gray;
+			}
+			#box{
+				
+				background: white;
+			}
+        </style>
+        <!-- <script src="../"></script> -->
+        <script>
+	        window.onload=function(){
+	        	var obox=document.getElementById('box');
+	        	// 绘制环境
+	        	var bt=obox.getContext('2d');
+
+	        	// 填充一个矩形
+	        	
+	        	bt.fillStyle='pink';
+	        	bt.fillRect(20, 20, 50, 50);
+	        	
+	        	// 绘制一个三角形形
+	        	bt.strokeStyle='red';
+	        	bt.moveTo(60, 60);
+	        	bt.lineTo(120, 60);
+	        	bt.lineTo(90,90);
+	        	bt.lineTo(60,60);
+	        	bt.stroke();
+
+	        	// 绘制一个矩形
+	        	bt.strokeStyle='blue';
+	        	bt.strokeRect(60, 120, 30, 30);
+
+
+
+
+	        	// 边线的大小
+	        	// 开始绘制
+	        	bt.save();
+	        	bt.beginPath();
+	        	bt.lineWidth=10;
+	        	// 边界绘制
+	        	bt.lineJoin='round';
+	        	// 端点样式
+	        	// bt.lineCap='round';
+	        	// 绘制一个矩形
+	        	bt.strokeStyle='green';
+	        	bt.strokeRect(120, 120, 30, 30);
+	        	// 结束绘制
+	        	bt.closePath();
+	       		bt.restore();
+
+
+
+
+
+	        	// 删除画布的矩形区域
+	        	bt.clearRect(0, 0, 200, 200);
+
+
+
+	        	// 绘制一个不规则图形
+	        	bt.save();
+	        	// bt.beginPath();
+	        	bt.strokeStyle='yellow';
+	        	bt.moveTo(10, 10);
+	        	bt.lineTo(20,20);
+	        	// bt.lineTo(15,23);
+	        	bt.lineTo(33,33);
+	        	bt.stroke();
+	        	// bt.closePath();
+	        	bt.restore();
+	        	
+	        }
+        </script>
+    </head>
+    <body>
+    	<canvas id='box' style='width:800px;height: 600px;'></canvas> 
+    </body>
+</html>

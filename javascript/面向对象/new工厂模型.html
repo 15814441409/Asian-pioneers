@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+   			function Person (name , sex) {
+   				//构造函数(类)
+   				this.name = name ;
+   				this.sex  = sex ;
+   				this.speak = function () {
+   					alert(this.name +':'+this.sex);
+   				}
+   				return this.speak();
+   				
+   			}
+   			var zhangsan = new Person('张三','男');
+   			zhangsan.speak();
+   			Person('张三','男');
+
+    	</script>
+    </body>
+</html>
